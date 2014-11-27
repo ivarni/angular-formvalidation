@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+<body>
+    <div ng-controller="Ctrl">
+        <form name="form">
+
+            <label for="number1">
+                <strong>Number #1</strong>
+            </label>
+            <input
+                type="text"
+                name="number1"
+                validate="models.number1"
+                ng-model="models.number1.value" />
+
+            <label for="number2">
+                <strong>Number #2</strong>
+            </label>
+            <input
+                type="text"
+                name="number2"
+                validate="models.number2"
+                ng-model="models.number2.value" />
+
+            <button ng-click="submit()">Submit</button>
+
+            <p>{{message}}</p>
+
+        </form>
+
+        <p>Model for number 1</p>
+        <pre>{{models.number1 | json}}</pre>
+        <p>Model for number 2</p>
+        <pre>{{models.number2 | json}}</pre>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
